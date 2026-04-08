@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD Studio Skin</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --azul-verde: #4384a4; 
+            --blanco: #ffffff;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 1. Header */
+        header {
+            background-color: var(--blanco);
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+        }
+        .logo {
+            max-width: 200px;
+            height: auto;
+        }
+
+        /* 2. CARRUSEL (Original sin modificaciones) */
+        .carrusel-section {
+            background-color: var(--azul-verde);
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .carrusel-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding: 20px;
+            scroll-behavior: smooth;
+        }
+        .carrusel-container img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10px;
+        }
+
+        /* 3. Redes Sociales */
+        .social-section {
+            background-color: var(--blanco);
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .social-icons a {
+            font-size: 45px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        .social-icons a:hover { transform: scale(1.2); }
+        .fa-facebook { color: #1877F2; }
+        .fa-whatsapp { color: #25D366; }
+        .fa-instagram { color: #E4405F; }
+
+        .save-contact {
+            margin-top: 10px;
+            padding: 15px 30px;
+            border: 2px solid var(--azul-verde);
+            border-radius: 50px;
+            display: inline-block;
+            color: var(--azul-verde);
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        /* 4. Footer con los ajustes de cuadros */
+        .grid-footer {
+            display: grid;
+            grid-template-columns: 2fr 1fr; /* Primero doble de ancho que el segundo */
+            gap: 20px;
+            padding: 40px 20px;
+            background-color: #f4f4f4;
+        }
+
+        .card-split {
+            background-color: white;
+            display: grid;
+            grid-template-columns: 1fr 1fr; 
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .location-part {
+            padding: 30px;
+            text-align: center;
+        }
+        .location-part:first-child { border-right: 1px solid #eee; }
+
+        .card-small {
+            background-color: var(--azul-verde);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px; /* Letra más pequeña */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn-location {
+            background-color: var(--azul-verde);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        @media (max-width: 768px) {
+            .grid-footer { grid-template-columns: 1fr; }
+            .card-split { grid-template-columns: 1fr; }
+            .location-part:first-child { border-right: none; border-bottom: 1px solid #eee; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="Imagenes/logo.png" alt="Logo" class="logo">
+    </header>
+
+    <section class="carrusel-section">
+        <div class="carrusel-container">
+            <img src="Imagenes/1.jpg" alt="Foto 1">
+            <img src="Imagenes/2.jpg" alt="Foto 2">
+            <img src="Imagenes/3.jpg" alt="Foto 3">
+            <img src="Imagenes/4.jpg" alt="Foto 4">
+            <img src="Imagenes/5.jpg" alt="Foto 5">
+            <img src="Imagenes/6.jpg" alt="Foto 6">
+            <img src="Imagenes/7.jpg" alt="Foto 7">
+        </div>
+    </section>
+
+    <section class="social-section">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/share/18hoRBZkEM/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://wa.me/526391928860" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/md_studioskin?igsh=MXVINzB4bGRjMTFzMQ%3D%3D&utm_source=qr" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+
+        <div class="save-contact" id="btnDescargar">
+            <i class="fa-solid fa-user-plus"></i> Guardar contacto
+        </div>
+    </section>
+
+    <section class="grid-footer">
+        <div class="card-split">
+            <div class="location-part">
+                <h3>Delicias</h3>
+                <a href="https://maps.app.goo.gl/JhenguJMzocGqBVB9?g_st=iw" target="_blank" class="btn-location">Ubicación</a>
+            </div>
+            <div class="location-part">
+                <h3>Chihuahua</h3>
+                <a href="https://maps.app.goo.gl/C68ic1LPzZqjK2Ft8?g_st=iw" target="_blank" class="btn-location">Ubicación</a>
+            </div>
+        </div>
+
+        <div class="card-small">
+            <p>©KonecTap</p>
+            VIBB
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('btnDescargar').addEventListener('click', function() {
+            const contacto = "BEGIN:VCARD\nVERSION:3.0\nFN:MD Studio Skin\nTEL;TYPE=CELL:526391928860\nEND:VCARD";
+            const blob = new Blob([contacto], { type: "text/vcard" });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "MD_Studio_Skin.vcf";
+            a.click();
+        });
+    </script>
+
+</body>
+</html>
